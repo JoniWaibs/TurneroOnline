@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOVE Turnos Online</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="./Assets/Css/styles.css">
+</head>
+
+<body>
+
+
+
+
+  <!--Nav Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="perfil.html">MOVE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Mis Datos</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Mis Turnos</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Mis Rutinas</a>
+        </li>
+        <li class="nav-item active bg-light">
+          <a class="nav-link text-move" href="#" id="logout">Cerrar Sesion</a>
+        </li>
+      </ul>
+    </div>
+  </nav><!--Nav Bar-->
+
+
+
+
+  <!--Main Content-->
+  <div id="main" class="container">
+    <div id="img">
+      <img src="./Assets/Src/logo.jpg" alt="logo">
+    </div>
+    <p class="card container py-3 text-center bg-dark text-light" id="parrafo">
+      Pedí tu turno por este medio. Si no podes asistir avisanos por WhatsApp.
+      <span>Nos cuidamos entre todos</span>
+    </p>
+
+
+    <button href="#" class="btn btn-move mx-auto d-block w-75 my-3" data-toggle="modal" data-target="#turnoModal">NUEVO
+      TURNO</a>
+    </button>
+
+
+    <!-- Modal Select Turnos -->
+    <div class="modal fade" id="turnoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content bg-dark text-light">
+
+        <!--NModal Header-->
+        <div class="modal-header">
+          <h5 class="modal-title" id="turnoModalTitle">Tu turno en MOVE</h5>
+          <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!--Modal Body-->
+        <div class="modal-body">
+
+          <form action="#" id="turnoForm">
+
+            <!--Sucursal-->
+            <div class="col section">
+              <div class="row">
+                <label class="text-center label">Sucursal</label>
+              </div>
+              <div class="row">
+                <select id="sucursal" size="1">
+                  <option value="selected" selected disabled>Seleccioná</option>
+                  <option value="Centro">CENTRO (07:00 a 20:00)</option>
+                  <option value="Norte">NORTE (14:00 a 20:00)</option>
+                  <option value="Balcarce">BALCARCE (09:00 a 20:00)</option>
+                </select>
+              </div>
+            </div>
+
+            <!--Activity-->
+            <div class="col section">
+              <div class="row">
+                <label for="" class="text-center label">Actividades</label>
+              </div>
+              <div class="row">
+                <select id="activity" size="1">
+                  <option value="selected" selected disabled>Seleccioná</option>
+                </select>
+              </div>
+            </div>
+
+            <!--Date-->
+            <div class="col section">
+              <div class="row">
+                <label for="" class="text-center label">Dias</label>
+              </div>
+              <div class="row">
+                <select id="date" size="1">
+                  <option value="selected" selected disabled>Seleccioná</option>
+                </select>
+              </div>
+            </div>
+            <!--Hours-->
+            <div class="col section">
+              <div class="row">
+                <label for="" class="text-center label">Horarios</label>
+              </div>
+              <div class="row">
+                <select id="hour" size="1">
+                  <option value="selected" selected disabled>Seleccioná</option>
+                </select>
+              </div>
+            </div>
+            <!--Whatsapp-->
+            <div class="row ">
+
+              <div class="col-12">
+                <label for="">Dejanos tu WhatsApp</label>
+              </div>
+
+              <div class="col-4">
+                <div class="input-group flex-nowrap">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="addon-wrapping">0</span>
+                  </div>
+                  <input type="number" id="area" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+              </div>
+
+
+              <div class="col-8">
+                <div class="input-group flex-nowrap ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text " id="addon-wrapping">15</span>
+                  </div>
+                  <input type="number" id="number" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+          <button type="submit" class="btn btn-success btn-lg mb-4 mt-2 btn-block">Enviar turno</button>
+          <button type="button" id="cerrarTurno" class="btn btn-danger d-block ml-auto mt-1 mb-2">Salir</button>
+        </div>
+       
+        </form>
+      </div>
+    </div>
+    </div>  <!-- Modal Select Turnos -->
+  </div><!--Main Content-->
+
+
+
+
+  <!--Bootstrap Scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <!--Firebase Scripts-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCZGQtTH8GqH-kn5C3X94fs1yjHDf2_c9w",
+      authDomain: "move-gimnasio.firebaseapp.com",
+      databaseURL: "https://move-gimnasio.firebaseio.com",
+      projectId: "move-gimnasio",
+      storageBucket: "move-gimnasio.appspot.com",
+      messagingSenderId: "783633610888",
+      appId: "1:783633610888:web:e981dec76543ac4f1f473d"
+    };
+  </script>
+
+
+  <!--JavaScript script-->
+  <script src="./perfil.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</body>
+
+</html>

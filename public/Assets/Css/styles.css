@@ -1,0 +1,130 @@
+.btn-move{
+    color: white;
+    background-color:#28a745;
+    border-radius: 100px;
+    height: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.btn-move-light{
+    color: #35685c;
+    background-color: white;
+    border-radius: 100px;
+    height: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.btn-facebook{
+    color: white;
+    background-color: #3578E5;
+    border-radius: 5px;
+} 
+.btn-google{
+    color: white;
+    background-color: rgb(229, 53, 53);
+    border-radius: 5px;
+}
+.text-move{
+    color: #35685c!important;
+    text-align: center;
+}
+.text-fluo-green{
+    color: #15ff00;
+}
+.text-fluo-orange{
+    color: #fff700;
+}
+
+body{
+    background-color: black;
+}
+#main{
+    max-height: 100vh;
+}
+
+#img img{
+    width: 90%;
+    display: block;
+    padding-top: 30px;
+    margin: 20px auto;
+}
+@media (min-width: 480px) {
+    #img img{
+        width: 30%;
+        display: block;
+        padding-top: 5px;
+        margin: 20px auto;
+    }
+}
+#parrafo{
+    font-size: 10px;
+}
+@media (min-width: 480px) {
+    #parrafo{
+        font-size: 14px;
+        width: 75%;
+    }
+}
+#parrafo span{
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 5px;
+}
+@media (min-width: 480px) {
+    #parrafo span{
+        font-size: 18px;
+        padding-top: 15px;
+    }
+}
+.section{
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+.label{
+    display: block;
+    padding:10px 0px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.section select{
+    background-color: rgb(230, 230, 230);
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 0px 0px 10px 10px;
+}
+.section option{
+    padding: 10px 5px;
+    font-size: 18px;
+}
+
+.section select:focus{
+    outline: none;
+    border: none;
+}
+#mainTurnos{
+    padding-top: 50px;
+}
+.pRedes{
+    font-size: 12px;
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    
+}
+#filterForm{
+    background-color: rgb(70, 70, 70);
+    padding: 5px;
+    border-radius: 5px;
+}
+.table td, .table th{
+    vertical-align: 0;
+} 

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOVE Turnos Online</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="./Assets/Css/styles.css">
+  <!--Datatable plugin-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+
+</head>
+
+<body>
+  <!--Nav Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MOVE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Mis Datos</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Calendario de turnos</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="#">Sucursales y profes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link bg-light text-move" href="#" id="logout">Cerrar Sesion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Main Content-->
+  <div id="mainTurnos" class="container">
+    <h5 class="text-light text-center pb-5">TURNOS REGISTRADOS</h5>
+
+    <form action="#" id="filterForm">
+      <div class="row">
+
+        <!--Filtros-->
+        <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+          <div class="form-group">
+            <label class="text-light">Actividad</label>
+            <select class="form-control" id="activity">
+              <option selected disabled>Selecciona</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+          <div class="form-group">
+            <label class="text-light">Sucursal</label>
+            <select class="form-control" id="sucursal">
+              <option value="selected" selected disabled>Seleccioná</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+          <div class="form-group">
+            <label class="text-light">Nombre / Apellido</label>
+            <input type="text" class="form-control" id="name" placeholder="Ingresa nombre y/o apellido">
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+          <div class="form-group">
+            <label class="text-light">Fecha</label>
+            <select class="form-control" id="date">
+              <option selected disabled>Selecciona</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2">
+          <div class="form-group">
+            <label class="text-light">Horario</label>
+            <select class="form-control" id="hour">
+              <option selected disabled>Selecciona</option>
+            </select>
+          </div>
+        </div>
+        
+
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button id="quitar" type="submit" class="btn btn-danger d-block ml-auto btn-sm">Quitar Filtro</button>
+        </div>
+      </div>
+    </form>
+
+
+    <div class="table-responsive">
+      <table class="table table-dark mt-3" id="Table">
+        <thead>
+          <tr class="text-uppercase">
+            <th scope="col">Actividad</th>
+            <th scope="col">Sucursal</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Dia</th>
+            <th scope="col">Hora Turno</th>
+            <th scope="col">WhatsApp</th>
+            <th scope="col" class="text-right" >Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--Turnos -->
+        </tbody>
+      </table>
+
+    </div>
+
+    
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--Bootstrap Scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+  </script>
+  <!--Firebase Scripts-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+  <!--JavaScript script-->
+  <script src="./admin.js" type="module"></script>
+  <!--Jquery-->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js">
+  </script>
+  <!--SweetAlert-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!--Moment JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js" integrity="sha512-Izh34nqeeR7/nwthfeE0SI3c8uhFSnqxV0sI9TvTcXiFJkMd6fB644O64BRq2P/LA/+7eRvCw4GmLsXksyTHBg==" crossorigin="anonymous"></script>
+</body>
+</html>

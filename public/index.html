@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVE Turnos Online</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/Css/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--index content-->
+    <div id="main" class="container">
+        <div id="img">
+            <img src="./Assets/Src/logo.jpg" alt="logo">
+        </div>
+
+        <p class="card container py-3 text-center bg-dark text-light" id="parrafo">
+            Pedí tu turno por este medio. Si no podes asistir avisanos por WhatsApp.
+            <span>Nos cuidamos entre todos</span>
+        </p>
+        <div id="content">
+
+            <div id="buttons">
+                <button id="signup" class="btn btn-move-light mx-auto d-block w-75 my-3" data-toggle="modal"
+                    data-target="#registrarUser">Registrarme</button>
+                <button id="signin" class="btn btn-move mx-auto d-block w-75 my-3" data-toggle="modal"
+                    data-target="#iniciarSesion">Iniciar Sesion
+                </button>
+            </div>
+
+        </div>
+
+
+    </div><!--index content-->
+
+
+
+    <!-- Modal Registrar usuario-->
+    <div class="modal fade" id="registrarUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title text-light">Registrate en MOVE</h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-light">
+
+                    <form action="#" class="form-group w-75 mx-auto" id="signUp">
+                        <!-- Clasical signup form and button-->
+                        <div class="row">
+                            <label for="mail">Tu Correo electronico</label>
+                            <input type="mail" id="mail" class="form-control ">
+                        </div>
+                        <div class="row">
+                            <label for="mail">Contraseña</label>
+                            <input type="password" id="pass" class="form-control">
+                        </div>
+                        <div class="row mt-3">
+                            <button type="submit" class="btn btn-move btn-block">REGISTRARME</button>
+                        </div>
+
+                        <!--Social Media Singup Buttons-->
+                        <div class="row mt-5">
+                            <p class="pRedes">O iniciá Sesion por única vez con:</p>
+                            <button id="facebookUp" type="button" class="btn btn-facebook btn-block m-1">
+                                <div class="row">
+                                    <div class="col-2 ">
+                                        <i class="ri-facebook-circle-fill "></i>
+                                    </div>
+                                    <span class="col-9 px-0 ">
+                                        Facebook
+                                    </span>
+                                </div>
+                            </button>
+
+                            <button id="googleUp" type="button" class="btn btn-google btn-block m-1">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <i class="ri-google-fill"></i>
+                                    </div>
+                                    <span class="col-9 px-0">
+                                        Google
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- Modal Registrar usuario-->
+
+    <!-- Modal Iniciar Sesion-->
+    <div class="modal fade" id="iniciarSesion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title text-light">Ingresar a tu perfil</h5>
+                    <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-light">
+                    <form action="#" class="form-group w-75 mx-auto" id="signIn">
+
+
+                        <!--Clasical signIn form and button-->
+                        <div class="row">
+                            <label for="mail">Tu Correo</label>
+                            <input type="mail" id="mailIniciar" class="form-control ">
+                        </div>
+                        <div class="row">
+                            <label for="mail">Contraseña</label>
+                            <input type="password" id="passIniciar" class="form-control">
+                        </div>
+                        <div class="row mt-3">
+                            <button type="submit" class="btn btn-move btn-block ingresar">INGRESAR</button>
+                        </div>
+
+
+                        <!--Social Media Singup Buttons-->
+
+                        <div class="row mt-5">
+
+                            <button id="facebookIn" type="button" class="btn btn-facebook col m-1">
+                                <div class="row">
+                                    <div class="col-2 ">
+                                        <i class="ri-facebook-circle-fill "></i>
+                                    </div>
+                                    <span class="col-9 px-0 ">
+                                        Facebook
+                                    </span>
+                                </div>
+                            </button>
+
+                            <button id="googleIn" type="button" class="btn btn-google col m-1">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <i class="ri-google-fill"></i>
+                                    </div>
+                                    <span class="col-9 px-0">
+                                        Google
+                                    </span>
+                                </div>
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div><!-- Modal Iniciar Sesion-->
+
+
+
+
+
+
+    <!--Bootstrap Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <!--Firebase Scripts-->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-functions.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCZGQtTH8GqH-kn5C3X94fs1yjHDf2_c9w",
+            authDomain: "move-gimnasio.firebaseapp.com",
+            databaseURL: "https://move-gimnasio.firebaseio.com",
+            projectId: "move-gimnasio",
+            storageBucket: "move-gimnasio.appspot.com",
+            messagingSenderId: "783633610888",
+            appId: "1:783633610888:web:e981dec76543ac4f1f473d"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //Firebase auth
+        const auth = firebase.auth();
+        //Firestore ddbb
+        const firestore = firebase.firestore();
+        //CLoud Functions
+        const functions = firebase.functions();
+    </script>
+    <!--JavaScript script-->
+    <script src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!--Scroll Reveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./JavaScript/Animaciones.js"></script>
+</body>
+
+</html>
