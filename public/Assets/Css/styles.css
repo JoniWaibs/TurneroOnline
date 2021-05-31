@@ -118,7 +118,6 @@ body{
     display: block;
     margin: 0 auto;
     font-weight: bold;
-    
 }
 #filterForm{
     background-color: rgb(70, 70, 70);
@@ -127,4 +126,12 @@ body{
 }
 .table td, .table th{
     vertical-align: 0;
-} 
+}
+input.datepicker{
+    outline:none;
+    border: none;
+    background-color:transparent;
+}
+input.datepicker:focus{
+    outline:none;
+}

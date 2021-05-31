@@ -161,14 +161,14 @@ import { getDataBase , borrarTurnoDataBase } from "./Firebase/Settings.js";
         let { Actividad, Sucursal, Nombre, Dia, hora, whatsapp , id} = turno;
 
         mainTurnos.innerHTML += `
-                              <tr>
+                              <tr >
                                   <td>${Actividad}</td>
                                   <td class="text-fluo-orange text-uppercase font-weight-bold">${Sucursal}</td>
                                   <td>${Nombre}</td>
                                   <td>${Dia}</td>
                                   <td>${hora}</td>
                                   <td class="text-fluo-green">${whatsapp}</td>
-                                  <td class="p-0 "><a class=" btn btn-sm btn-danger eliminar"  data-id="${id}" >Eliminar</a></td>
+                                  <td class="p-0 text-right ml-auto pr-2"><a class="btn btn-sm btn-danger eliminar" data-id="${id}" >Eliminar</a></td>
                               </tr>
                               `;
       });
@@ -283,7 +283,7 @@ import { getDataBase , borrarTurnoDataBase } from "./Firebase/Settings.js";
         uid = user.uid;
         providerData = user.providerData;
         //Si el id del user es este, muestra los datos
-        if (uid === "6o6osg8MYJfeNC78h7SovdVZg4H3") {
+        if (uid === "vklogDIplfdqVhkKeRkQ6WiRmMB2") {
               console.log("Perfil Admin");
             } else {
               //Si no es admin lo saca

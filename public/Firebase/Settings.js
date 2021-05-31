@@ -20,12 +20,7 @@ const firestore = firebase.firestore();
 
 //DISPONIBILIZA LA BASE DE DATOS
 export const getDataBase = async()=>{
-    try{
-        const response = firestore.collection("Turnos")
-        return response;
-    }catch(error){
-        console.log(error)
-    };
+  return await firestore.collection("Turnos")
 };
 //BORRA UN ELEMENTO DE LA BASE DE DATOS
 export function borrarTurnoDataBase(id, borrarHTML){

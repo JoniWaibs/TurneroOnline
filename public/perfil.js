@@ -10,7 +10,7 @@ import {
   cargaHour,
   cargaSucursal,
 } from "./JavaScript/Functions.js";
-import { guardarTurno } from "./Firebase/Settings.js";
+import { guardarTurno, getDataBase } from "./Firebase/Settings.js";
 (() => {
   ///////////////SELECTORES/////////////////////////
   //Variables con los datos del perfil del usuario disponibles
@@ -42,7 +42,7 @@ import { guardarTurno } from "./Firebase/Settings.js";
 
   ///////////////FUNCIONES/////////////////////////
   //Funcion que lee todos los datos del turno, los valida y guarda en la ddbb
-  function dataRead(e) {
+  async function dataRead(e) {
     e.preventDefault();
     const sucursal = document.querySelector("#sucursal").value;
     const activity = document.querySelector("#activity").value;
@@ -68,11 +68,29 @@ import { guardarTurno } from "./Firebase/Settings.js";
         confirmButtonText: "Entendido!",
       });
     } else {
-      // Nuevo turnno generado, y guardado en la base de datos
-      guardarTurno(activity, date, displayName, sucursal, email, hour, wp);
+      let StockTurnos = []
+      const DB = await getDataBase()
+      await DB.where("Dia", "==", date).where("hora", "==", hour).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          StockTurnos = [...StockTurnos, doc.data()]
+        });
+      })
+      console.log(StockTurnos.length)
+      if(StockTurnos.length < 12){
+        // Nuevo turnno generado, y guardado en la base de datos
+        guardarTurno(activity, date, displayName, sucursal, email, hour, wp);
+        //reseto el form
+        turnoForm.reset();
+      }else{
+        //Alerta error
+        Swal.fire({
+          title: "Ups! Parece que este horario esta lleno!",
+          text: "Saca turno en un horario distinto!",
+          icon: "error",
+          confirmButtonText: "Entendido!",
+        });
+      }
 
-      //reseto el form
-      turnoForm.reset();
     }
   };
   //Funcion que Observar los cambios que van sucediendo
@@ -91,7 +109,9 @@ import { guardarTurno } from "./Firebase/Settings.js";
           //Si entra por email & pass pedir nomb
           //Y setearlo en la ddbb
           console.log(emailVerified);
-          console.log(displayName);
+          if(displayName === 'admin@movecenter.com' ){
+            window.location.href = "admin.html";
+          };
         } else {
           // User is signed in.
           displayName = user.displayName;
