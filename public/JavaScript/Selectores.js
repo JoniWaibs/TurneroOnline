@@ -16,7 +16,6 @@ function setDatePicker(currentYear, currentMonth, currentDay, date){
 }
 //HORARIOS DISPONIBLES
 export let horario = [
-  "07:00 hs a 08:00 hs",
   "08:00 hs a 09:00 hs",
   "09:00 hs a 10:00 hs",
   "10:00 hs a 11:00 hs",
