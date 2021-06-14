@@ -78,7 +78,7 @@ import { guardarTurno, getDataBase } from "./Firebase/Settings.js";
       console.log(StockTurnos.length)
       if(StockTurnos.length < 12){
         // Nuevo turnno generado, y guardado en la base de datos
-        guardarTurno(activity, date, displayName, sucursal, email, hour, wp);
+        guardarTurno(activity, date, displayName, sucursal, email, hour, wp, uid);
         //reseto el form
         turnoForm.reset();
       }else{

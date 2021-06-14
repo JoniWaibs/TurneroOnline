@@ -32,7 +32,7 @@ export function borrarTurnoDataBase(id, borrarHTML){
 });
 };
 //GUARDAR NUEVO TURNO
-export function guardarTurno(activity, date, displayName, sucursal , email , hour , wp){
+export function guardarTurno(activity, date, displayName, sucursal , email , hour , wp, uid){
 
   firestore
   .collection("Turnos")
@@ -44,6 +44,7 @@ export function guardarTurno(activity, date, displayName, sucursal , email , hou
     email: email,
     hora: hour,
     whatsapp: wp,
+    userId: uid
   })
   .then(function (docRef) {
     console.log("Document written with ID: ", docRef.id);

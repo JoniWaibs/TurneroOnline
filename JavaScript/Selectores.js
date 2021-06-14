@@ -10,7 +10,7 @@ export let dates = setDatePicker(currentYear, currentMonth, currentDay, date);
 function setDatePicker(currentYear, currentMonth, currentDay, date){
   let result = []
   for( let i = 1; i <= currentDay; i++){
-    result = [...result , ` ${i}/${currentMonth}/${currentYear}`]
+    result = [...result , `${i}/${currentMonth}/${currentYear}`]
   }
   return result;
 }
@@ -26,6 +26,8 @@ export let horario = [
   "15:00 hs a 16:00 hs",
   "16:00 hs a 17:00 hs",
   "17:00 hs a 18:00 hs",
+  "18:00 hs a 19:00 hs",
+  "19:00 hs a 20:00 hs",
 ];
 //SUCURSALES DISPONIBLES
 export let sucursales = [

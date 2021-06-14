@@ -21,10 +21,16 @@ import { getDataBase , borrarTurnoDataBase } from "./Firebase/Settings.js";
   let name = document.querySelector("#name");
   let limpiarFiltros = document.querySelector("#quitar");
   let FormularioFiltro = document.querySelector('#filterForm')
+
+  const currentYear = new Date().getFullYear()
+  const currentMonth = new Date().getMonth() + 1
+  const currentDay = new Date().getDate();
+
+
   //Objeto para el filtrado
   const datosBusqueda = {
     Actividad: "",
-    Dia: "",
+    Dia: `${currentDay}/${currentMonth}/${currentYear}`,
     hora: "",
     Sucursal: "",
     Nombre: "",
@@ -48,7 +54,7 @@ import { getDataBase , borrarTurnoDataBase } from "./Firebase/Settings.js";
     Swal.fire({
         title: "Descargando Turnos",
         html: "Aguarde un momento por favor!",
-        timer: 2000,
+        timer: 4000,
         timerProgressBar: true,
         willOpen: () => {
           Swal.showLoading();
@@ -127,9 +133,11 @@ import { getDataBase , borrarTurnoDataBase } from "./Firebase/Settings.js";
   ///////////////FUNCIONES/////////////////////////
   //Funcion que gestiona la base de datos
   async function gestionarDataBase(dataBase) {
+
     //Recorrerla, completar el array, y mostrar los datos en el html
     await dataBase.orderBy("Dia", 'asc').get().then((querySnapShot) => {
       querySnapShot.forEach((doc) => {
+        console.log(doc.data())
         //Llenar el array con este objeto
         const turno = {
           Actividad:  doc.data().Actividad,
@@ -189,6 +197,7 @@ import { getDataBase , borrarTurnoDataBase } from "./Firebase/Settings.js";
   };
   //Funcion que recibe los datos del pbjeto para filtrar
   function filtrarTurnos() {
+
     //Encadeno todos los filtros en la constante resltado
     const resultado = turnos
       .filter(filtrarActividad)
